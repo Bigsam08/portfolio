@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
+    "emailjs-com": "^3.2.0",
     "framer-motion": "^12.16.0",
     "hugeicons-react": "^0.3.0",
     "lucide-react": "^0.513.0",
@@ -19,7 +20,9 @@
     "react-router-dom": "^7.6.2",
     "swiper": "^11.2.8",
     "tailwindcss": "^4.1.8",
-    "vite-imagetools": "^7.1.0"
+    "uuid": "^11.1.0",
+    "vite-imagetools": "^7.1.0",
+    "zustand": "^5.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

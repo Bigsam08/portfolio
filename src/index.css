@@ -76,14 +76,3 @@
   animation: spin 8s linear infinite;
 }
 
-
-.custom-swiper .swiper-pagination {
-  font-size: 1.25rem;         /* Tailwind's text-xl */
-  font-weight: 600;
-  color: #4f46e5;             /* Tailwind's indigo-600 */
-  text-align: right;
-  padding-right: 1rem;
-  position: absolute;
-  bottom: 0;                  /* stick it to bottom */
-  right: 0;                   /* right-align */
-}
