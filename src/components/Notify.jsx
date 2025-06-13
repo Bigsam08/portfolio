@@ -5,7 +5,7 @@ import { AnimatePresence, motion as Motion } from "framer-motion";
 import notificationStore from "../store/notifyStore";
 import { useEffect } from "react";
 
-const NOTIFICATION_SOUND = "/src/assets/notification.wav";
+const NOTIFICATION_SOUND = "/audio/notification.wav";
 
 const Notify = () => {
   const { notify } = notificationStore(); // import notification from the notification store

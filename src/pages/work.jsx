@@ -9,10 +9,10 @@ import { motion as Motion } from "framer-motion";
 
 // Images
 const images = [
-  { src: "/src/assets/Screenshot (10).png", title: "Banking app" },
-  { src: "/src/assets/Screenshot (11).png", title: "school dashBoard" },
-  { src: "/src/assets/Screenshot (5).png", title: "Demo" },
-  { src: "/src/assets/Screenshot (9).png", title: "chat app" },
+  { src: "/images/Screenshot (10).png", title: "Banking app" },
+  { src: "/images/Screenshot (11).png", title: "school dashBoard" },
+  { src: "/images/Screenshot (5).png", title: "Demo" },
+  { src: "/images/Screenshot (9).png", title: "chat app" },
   { src: "/works/work5.jpg", title: "movie app" },
   { src: "/works/work6.jpg", title: "vibey" },
   { src: "/works/work6.jpg", title: "vibey" },

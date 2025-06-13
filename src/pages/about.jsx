@@ -62,7 +62,7 @@ const About = () => {
 
           {/* Profile Image */}
           <img
-            src="/src/assets/my-pic.jpg"
+            src="images/my-pic.jpg"
             alt="Profile"
             className="h-52 md:w-64 md:h-64 object-cover rounded-full shadow-lg shadow-cyan-500/20 border-2 border-cyan-500 z-10"
           />
