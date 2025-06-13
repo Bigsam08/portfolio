@@ -4,7 +4,7 @@
  */
 import { Link } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
-import Facebook from "lucide-react/dist/esm/icons/facebook";
+import Youtube from "lucide-react/dist/esm/icons/youtube";
 import Github from "lucide-react/dist/esm/icons/github";
 import Twitter from "lucide-react/dist/esm/icons/twitter";
 import Linkedin from "lucide-react/dist/esm/icons/linkedin";
@@ -12,10 +12,26 @@ import Linkedin from "lucide-react/dist/esm/icons/linkedin";
 const Navbar = () => {
   /** Nav links items map */
   const items = [
-    { icon: <Facebook strokeWidth={1.5} size={20} />, title: "Facebook", link: "#" },
-    { icon: <Github strokeWidth={1.5} size={20} />, title: "Github", link: "#" },
-    { icon: <Twitter strokeWidth={1.5} size={20} />, title: "Twitter", link: "#" },
-    { icon: <Linkedin strokeWidth={1.5} size={20} />, title: "Linkedin", link: "#" },
+    {
+      icon: <Github strokeWidth={1.5} size={20} />,
+      title: "Github",
+      link: "https://www.github.com/bigsam08",
+    },
+    {
+      icon: <Twitter strokeWidth={1.5} size={20} />,
+      title: "Twitter",
+      link: "https://www.x.com/olusamt",
+    },
+    {
+      icon: <Linkedin strokeWidth={1.5} size={20} />,
+      title: "Linkedin",
+      link: "https://www.linkedin.com/in/oluwasholaagbebi",
+    },
+    {
+      icon: <Youtube strokeWidth={1.5} size={20} />,
+      title: "Youtube",
+      link: "https://www.youtube.com/@mastersamuel6147",
+    },
   ];
 
   return (
@@ -49,7 +65,11 @@ const Navbar = () => {
               key={idx}
               variants={{
                 hidden: { opacity: 0, scale: 0.6 },
-                visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.4, ease: "easeOut" },
+                },
               }}
             >
               <Link

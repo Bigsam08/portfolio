@@ -1,13 +1,15 @@
 /**
  *  Contact page to get emails from clients
  */
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "emailjs-com"; // email sender
 import { motion as Motion } from "framer-motion";
+import Loader from "../components/Loader";
 
 import notificationStore from "../store/notifyStore";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false); // loading state for sending messages
   const formRef = useRef();
   const { success, error } = notificationStore();
 
@@ -24,20 +26,22 @@ const Contact = () => {
       error("All fields required");
       return;
     }
-
+    setLoading(true);
     emailjs
       .sendForm(
-        "your_service_id", // 🔁 Replace with your actual service ID
-        "your_template_id", // 🔁 Replace with your actual template ID
+        import.meta.env.VITE_SERVICE_KEY, // service ID
+        import.meta.env.VITE_TEMPLATE_KEY, // template ID
         formRef.current,
-        "your_public_key" // 🔁 Replace with your public key from EmailJS
+        import.meta.env.VITE_PUBLIC_KEY // public key from EmailJS
       )
       .then(
         () => {
+          setLoading(false);
           success("You have successfully sent me a message");
           formRef.current.reset();
         },
         (error) => {
+          setLoading(false);
           error("Unexpected error has occurred");
           console.error("EmailJS Error:", error);
         }
@@ -74,9 +78,17 @@ const Contact = () => {
           <Motion.input
             whileFocus={{ scale: 1.02 }}
             type="text"
+            name="subject"
+            placeholder="subject"
+            className="w-full p-3 bg-white/80 rounded-md outline-none text-sm"
+          />
+
+          <Motion.input
+            whileFocus={{ scale: 1.02 }}
+            type="text"
             name="user_name"
             placeholder="Your Name"
-            className="w-full p-3 bg-white/80 rounded-md outline-none text-sm"
+            className="w-full p-3 bg-white/10 rounded-md outline-none text-sm text-secondary"
           />
           <Motion.input
             whileFocus={{ scale: 1.02 }}
@@ -95,9 +107,17 @@ const Contact = () => {
           <Motion.button
             whileFocus={{ scale: 1.02 }}
             type="submit"
-            className="bg-cyan-600 hover:bg-cyan-700 text-secondary py-2 px-4 rounded-md cursor-pointer transition-color ease-in-out duration-500"
+            disabled={loading}
+            className="bg-cyan-600 hover:bg-cyan-700 text-secondary py-2 px-4 rounded-md cursor-pointer transition-color ease-in-out duration-500 disabled:bg-cyan-900 disabled:cursor-not-allowed"
           >
-            Send Message
+            {loading ? (
+              <div className="flex gap-2 items-center">
+                
+                <Loader /> <span> Sending <span className="animate-pulse"> ...</span></span>
+              </div>
+            ) : (
+              "Send Message"
+            )}
           </Motion.button>
         </Motion.form>
       </div>
