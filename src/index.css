@@ -1,5 +1,11 @@
 /* import tailwind 4 */
 
+
+/* 
+   gray-900: #111827
+   cyan-300: #67e8f9
+*/
+
 @import "tailwindcss";
 
 * {
@@ -9,14 +15,37 @@
   font-style: normal;
 }
 
+/** main theme cyan dark */
 :root {
+
+  /** text */
   --text-main: #67e8f9; /** cyan 300 */
   --text-secondary: #fff; /** white */
   --text-cool: #99a1af; /** gray 400 */
+
+  /** Navigator settings */
+
   --nav-text: #a2f4fd; /** cyan 200 */
-  --logo-bg: #06b6d4; /** cyan 500 */
+  --logo-bg: #06B6D4; /** cyan 500 */
   --text-base: #101828; /** gray 900 */
+  --navigator-text-hover: #06B6D4; /** cyan 500 **/
+
+  /** border color */
+  --border-color: #06B6D4; /** cyan 500 **/
+
+   /** about page tab hover  / skills background */
   --hover-text-main: #06b6d4;
+  --bg-skills : #1e293b; /** slate  800 */
+
+  /** contact bg */
+   --button-bg:  #06B6D4; /** cyan 500 */
+   --hover-button: #0097A7; /** cyan 700 */
+
+  /**  services */
+    --text-icon-color:  #06B6D4; /** cyan 500 */
+    --bg-card: #1e293b; /** slate  800 */
+
+  /** main background */
   --custom-bg: linear-gradient(
     135deg,
     #67e8f9 1%,
@@ -26,10 +55,48 @@
   );
 }
 
-/* 
-   gray-900: #111827
-   cyan-300: #67e8f9
+
+/*
+* Milky theme
 */
+
+.cream {
+  --text-main:  #451A03; /** amber 950 */
+  --text-secondary: #FB923C; /** orange 400 */
+  --text-cool: #99a1af; /** gray 400 */
+
+  /** nav settings */
+  --nav-text: #451A03; /** AMBER 950 ----------*/
+  --logo-bg: #451A03; /** amber 950 */
+  --text-base: #FEFCEA; /** yellow 50 */
+  --navigator-text-hover: #451A03; /** AMBER 950 ----------*/
+
+  /** about page tab hover  / skills background */
+  --hover-text-main: #FB923C; /** orange 400 */
+  --bg-skills : #451A03; /** amber 950 */
+
+  /** border color */
+  --border-color: #451A03; /** AMBER 950 ----------*/
+
+  /** contact background */
+   --button-bg: #451A03; /** amber 950 */
+   --hover-button: #6D3D14; /** orange 700 */
+
+   /**  services */
+   --text-icon-color: #fff; /** white  */
+   --bg-card: #451A03; /* amber 950
+
+  /** main background */
+  --custom-bg: linear-gradient(
+    135deg,
+     #451A03 1%, /** amber rich brown 950*/
+    #FEFCEA 20%,  /** yellow 50*/
+    #FEFCEA 80%,
+    #451A03 95%  /** amber rich brown 950*/
+  );
+}
+
+
 
 .custom-bg {
   background: var(--custom-bg);
@@ -49,7 +116,7 @@
 .text-base {
   color: var(--text-base);
 }
-.logo-bg {
+.logo-bg, .button-bg {
   background: var(--logo-bg);
 }
 .hover-nav-link:hover {
@@ -60,11 +127,34 @@
   scale: 0.9;
 }
 
+.navigator-text-hover:hover {
+  color: var(--navigator-text-hover);
+}
+
+.border-color {
+  border-color: var(--border-color);
+}
+
+.bg-skills {
+  background: var(--bg-skills);
+}
+
+.hover-button:hover {
+  background: var(--hover-button);
+}
+
+.text-icon-color {
+  color: var(--text-icon-color);
+}
+.bg-card {
+  background: var(--bg-card);
+}
+/** page settings */
 .page {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(100vh - 10rem);
+  min-height: 100vh;
   padding-left: 1.5rem; /* px-6 = 1.5rem */
   padding-right: 1.5rem;
   padding-top: 2.5rem; /* py-10 = 2.5rem */

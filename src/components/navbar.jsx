@@ -3,13 +3,25 @@
  * Nav bar entry point
  */
 import { Link } from "react-router-dom";
-import { motion as Motion } from "framer-motion";
+import { easeIn, motion as Motion } from "framer-motion";
 import Youtube from "lucide-react/dist/esm/icons/youtube";
 import Github from "lucide-react/dist/esm/icons/github";
 import Twitter from "lucide-react/dist/esm/icons/twitter";
 import Linkedin from "lucide-react/dist/esm/icons/linkedin";
 
+import Moon from "lucide-react/dist/esm/icons/moon";
+import Sun from "lucide-react/dist/esm/icons/sun";
+
+import useThemeStore from "../store/theme.store";
+
 const Navbar = () => {
+  // theme switcher
+  const { switchTheme, theme } = useThemeStore();
+
+  const toggle = () => {
+    switchTheme();
+  };
+
   /** Nav links items map */
   const items = [
     {
@@ -35,9 +47,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="relative h-20 flex justify-center p-4">
+    <nav className="fixed top-0 left-0 w-full h-20 flex justify-center p-4 z-50  backdrop-blur-sm">
       {/* Middle container */}
-      <div className="md:w-7xl flex justify-between items-center px-5 nav-text w-full max-w-7xl">
+      <div className=" md:w-7xl flex justify-between items-center px-5 nav-text w-full max-w-7xl">
         {/* Logo */}
         <div className="flex gap-2 items-center">
           <span className="logo-bg text-secondary px-3 rounded-full">OSA</span>
@@ -46,9 +58,24 @@ const Navbar = () => {
           </h1>
         </div>
 
+        {/** theme switch */}
+        <Motion.button
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{
+            scale: 1,
+            opacity: 1,
+            transition: { duration: 1, ease: easeIn },
+          }}
+          onClick={toggle}
+          className="cursor-pointer transition -transform duration-500 hover:rotate-[360deg]"
+          title="change theme"
+        >
+          {theme === "dark" ? <Sun /> : <Moon />}
+        </Motion.button>
+
         {/* Social Links with Animation */}
         <Motion.section
-          className="flex gap-4 items-center md:static absolute left-1/2 -translate-x-1/2 top-full"
+          className="flex gap-4 mt-2 items-center md:static absolute left-1/2 -translate-x-1/2 top-full"
           initial="hidden"
           animate="visible"
           variants={{
@@ -75,7 +102,7 @@ const Navbar = () => {
               <Link
                 to={item.link}
                 title={item.title}
-                className="hover-nav-link transition"
+                className="hover-nav-link transition "
               >
                 {item.icon}
               </Link>

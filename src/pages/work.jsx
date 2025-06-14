@@ -94,7 +94,7 @@ const Work = () => {
                   {group.map((project, idx) => (
                     <Motion.div
                       key={idx}
-                      className="relative group bg-cyan-500/40 backdrop-blur-3xl rounded-xl cursor-pointer border border-cyan-700/70 overflow-hidden"
+                      className="relative group bg-white/10 backdrop-blur-3xl rounded-xl cursor-pointer border border-color overflow-hidden"
                       whileHover="hover"
                       initial="initial"
                       variants={{

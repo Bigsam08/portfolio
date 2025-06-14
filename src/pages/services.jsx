@@ -11,22 +11,22 @@ const servicesList = [
   {
     title: "Frontend Development",
     description: "Modern, fast, and responsive interfaces using React, Tailwind, and more.",
-    icon: <Code className="w-8 h-8 text-cyan-500" />,
+    icon: <Code className="w-8 h-8 text-icon-color" />,
   },
   {
     title: "Backend Development",
     description: "Scalable backend systems using Node.js, Express, MongoDB, etc.",
-    icon: <Server className="w-8 h-8 text-cyan-500" />,
+    icon: <Server className="w-8 h-8 text-icon-color" />,
   },
   {
     title: "UI/UX & Graphics Design",
     description: "High-quality visuals, branding, and smooth user experiences.",
-    icon: <Brush className="w-8 h-8 text-cyan-500" />,
+    icon: <Brush className="w-8 h-8 text-icon-color" />,
   },
   {
     title: "Mobile App Development",
     description: "Cross-platform apps built with React Native and clean UI design.",
-    icon: <Smartphone className="w-8 h-8 text-cyan-500" />,
+    icon: <Smartphone className="w-8 h-8 text-icon-color" />,
   },
 ];
 
@@ -89,7 +89,7 @@ const Services = () => {
           >
             {servicesList.map((service, index) => (
               <SwiperSlide key={index}>
-                <div className="group bg-slate-800 border border-cyan-700/30 rounded-xl p-6 h-full transition hover:shadow-xl hover:scale-[1.02] duration-300">
+                <div className="group bg-card border border-cyan-700/30 rounded-xl p-6 h-full transition hover:shadow-xl hover:scale-[1.02] duration-300">
                   <div className="mb-4">{service.icon}</div>
                   <h3 className="text-xl font-semibold mb-2 text-secondary group-hover:text-cyan-400">
                     {service.title}
@@ -104,13 +104,13 @@ const Services = () => {
           <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 flex gap-4 z-30">
             <button
               ref={prevRef}
-              className="bg-white/10 border border-cyan-700/30 p-2 rounded-full hover:bg-white/20 transition"
+              className="bg-white/10 border border-color p-2 rounded-full hover:bg-white/20 transition"
             >
               <ArrowLeft className="text-secondary size-4" />
             </button>
             <button
               ref={nextRef}
-              className="bg-white/10 border border-cyan-700/30 p-2 rounded-full hover:bg-white/20 transition"
+              className="bg-white/10 border border-color p-2 rounded-full hover:bg-white/20 transition"
             >
               <ArrowRight className="text-secondary size-4" />
             </button>

@@ -15,7 +15,17 @@ import Navigator from "./components/navigator";
 import Notify from "./components/Notify"; // custom notification
 import MovingEffect from "./components/MovingEffect";
 
+import useThemeStore from "./store/theme.store";
+import { useEffect } from "react";
+
 const App = () => {
+  const { setTheme, theme } = useThemeStore();
+
+  useEffect(() => {
+    setTheme(theme);
+  }, [theme, setTheme]);
+
+
   return (
     <div className="relative min-h-screen custom-bg overflow-hidden">
       <MovingEffect />
@@ -28,7 +38,7 @@ const App = () => {
           <Route path="/work" element={<Work />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <div className="flex justify-center pb-5">
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40">
           <Navigator />
         </div>
         <Notify />

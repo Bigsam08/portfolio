@@ -64,7 +64,7 @@ const About = () => {
           <img
             src="images/my-pic.jpg"
             alt="Profile"
-            className="h-52 md:w-64 md:h-64 object-cover rounded-full shadow-lg shadow-cyan-500/20 border-2 border-cyan-500 z-10"
+            className="h-52 md:w-64 md:h-64 object-cover rounded-full shadow-lg shadow-cyan-500/20 border-4 border-color z-10"
           />
         </Motion.div>
 
@@ -100,7 +100,7 @@ const About = () => {
                 onClick={() => setActiveTab("skills")}
                 className={`pb-2 font-semibold cursor-pointer hover-text-main ${
                   activeTab === "skills"
-                    ? "border-b-4 border-cyan-400 text-main"
+                    ? "border-b-4 border-color text-main"
                     : "text-cool"
                 }`}
               >
@@ -111,7 +111,7 @@ const About = () => {
                 onClick={() => setActiveTab("credentials")}
                 className={`pb-2 font-semibold cursor-pointer hover-text-main ${
                   activeTab === "credentials"
-                    ? "border-b-4 border-cyan-400 text-main"
+                    ? "border-b-4 border-color text-main"
                     : "text-cool"
                 }`}
               >
@@ -122,7 +122,7 @@ const About = () => {
                 onClick={() => setActiveTab("experience")}
                 className={`pb-2 font-semibold cursor-pointer hover-text-main ${
                   activeTab === "experience"
-                    ? "border-b-4 border-cyan-400 text-main"
+                    ? "border-b-4 border-color text-main"
                     : "text-cool"
                 }`}
               >
@@ -142,7 +142,7 @@ const About = () => {
                   {skills.map((skill) => (
                     <li
                       key={skill}
-                      className="bg-gray-800 px-3 py-1 rounded-full border border-cyan-400"
+                      className="bg-skills px-3 py-1 rounded-full border border-color"
                     >
                       {skill}
                     </li>

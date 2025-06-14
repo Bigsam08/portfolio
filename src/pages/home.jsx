@@ -5,9 +5,9 @@ import { motion as Motion } from "framer-motion";
 
 const home = () => {
   return (
-    <div className="relative min-h-[calc(100vh-10rem)] flex justify-center p-5 text-secondary">
+    <div className="relative min-h-screen flex justify-center p-5 text-secondary">
       {/* Center container */}
-      <section className="grid md:grid-cols-[60%_1fr] w-7xl p-4">
+      <section className="grid md:grid-cols-[60%_1fr] w-7xl p-4  mt-5 md:">
         {/* Hero text div */}
         <Motion.div
           className="flex flex-col justify-center"
@@ -66,7 +66,7 @@ const home = () => {
               repeatType: "loop",
               ease: "easeInOut",
             }}
-            className="relative w-64 h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-cyan-500"
+            className="relative w-64 h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden shadow-2xl border-4 border-color"
           >
             {/* Image */}
             <img

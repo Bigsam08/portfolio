@@ -1,4 +1,6 @@
-import { motion as Motion } from "framer-motion";
+import { motion as Motion } from "framer-motion"
+import useThemeStore from "../store/theme.store";
+
 
 const balls = [
   {
@@ -37,7 +39,18 @@ const balls = [
   },
 ];
 
+// Helper function to switch color based on theme
+const getFillColor = (theme, baseColor) => {
+  if (theme === "cream") {
+    // Convert neon blues to warm yellows
+    return baseColor === "#0ff" ? "#FB923C" : "#451A03";
+  }
+  return baseColor; // Default blue/neon for dark theme
+};
+
 const MovingEffect = () => {
+  const theme = useThemeStore((state) => state.theme);
+
   return (
     <Motion.svg
       className="absolute inset-0 w-full h-full z-0 pointer-events-none blur-sm"
@@ -50,7 +63,7 @@ const MovingEffect = () => {
           cx={ball.reverse ? 100 : 0}
           cy={ball.cy}
           r={ball.r}
-          fill={ball.fill}
+          fill={getFillColor(theme, ball.fill)}
           animate={{
             cx: ball.reverse ? [100, 0, 100] : [0, 100, 0],
           }}

@@ -59,7 +59,7 @@ const Contact = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h1 className="text-2xl md:text-4xl font-bold">Contact Me</h1>
+          <h1 className="text-2xl md:text-4xl font-bold">Let's Connect</h1>
           <p className="text-sm sm:text-lg text-cool">
             Reach out to me for a job, gig, or even a collaboration. Let's code
             and keep building to solve world problems.
@@ -80,7 +80,7 @@ const Contact = () => {
             type="text"
             name="subject"
             placeholder="subject"
-            className="w-full p-3 bg-white/80 rounded-md outline-none text-sm"
+            className="w-full p-3 logo-bg text-secondary  rounded-md outline-none text-sm"
           />
 
           <Motion.input
@@ -88,27 +88,27 @@ const Contact = () => {
             type="text"
             name="user_name"
             placeholder="Your Name"
-            className="w-full p-3 bg-white/10 rounded-md outline-none text-sm text-secondary"
+            className="w-full p-3 bg-white/10 shadow rounded-md outline-none text-sm text-main"
           />
           <Motion.input
             whileFocus={{ scale: 1.02 }}
             type="email"
             name="user_email"
             placeholder="Your Email"
-            className="w-full p-3 bg-white/10 text-secondary rounded-md outline-none text-sm"
+            className="w-full p-3 bg-white/10 shadow text-main rounded-md outline-none text-sm"
           />
           <Motion.textarea
             whileFocus={{ scale: 1.02 }}
             name="message"
             placeholder="Your Message"
             rows={5}
-            className="w-full p-3 bg-white/10 rounded-md outline-none text-sm text-secondary"
+            className="w-full p-3 bg-white/10 shadow rounded-md outline-none text-sm text-main"
           ></Motion.textarea>
           <Motion.button
             whileFocus={{ scale: 1.02 }}
             type="submit"
             disabled={loading}
-            className="bg-cyan-600 hover:bg-cyan-700 text-secondary py-2 px-4 rounded-md cursor-pointer transition-color ease-in-out duration-500 disabled:bg-cyan-900 disabled:cursor-not-allowed"
+            className="button-bg hover-button hover:scale-100 scale-95  text-secondary py-2 px-4 rounded-2xl cursor-pointer transition-color ease-in-out duration-500 disabled:bg-cyan-900 disabled:cursor-not-allowed"
           >
             {loading ? (
               <div className="flex gap-2 items-center">
