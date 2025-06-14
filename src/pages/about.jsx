@@ -55,16 +55,16 @@ const About = () => {
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: false }}
-          className="relative flex justify-center items-center"
+          className="relative flex justify-center items-center mt-7 md:mt-0 "
         >
           {/* Spinning Circle */}
-          <div className="absolute rounded-full border-4 border-transparent animate-spin-slow custom-bg w-58 h-52 md:w-96 md:h-96 z-0"></div>
+          <div className="absolute rounded-full border-4 border-transparent animate-spin-slow custom-bg w-60 h-60 md:w-96 md:h-96 z-0"></div>
 
           {/* Profile Image */}
           <img
             src="images/my-pic.jpg"
             alt="Profile"
-            className="h-52 md:w-64 md:h-64 object-cover rounded-full shadow-lg shadow-cyan-500/20 border-4 border-color z-10"
+            className="h-52 w-52 md:w-64 md:h-64 object-cover rounded-full shadow-lg shadow-cyan-500/20 border-4 border-color z-10"
           />
         </Motion.div>
 

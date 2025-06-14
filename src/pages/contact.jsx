@@ -54,7 +54,7 @@ const Contact = () => {
         {/* Left: Text */}
 
         <Motion.div
-          className="space-y-4 text-main mb-6 md:mb-0"
+          className="space-y-4 text-main mt-4 md:mt-0"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}

@@ -7,10 +7,10 @@ const home = () => {
   return (
     <div className="relative min-h-screen flex justify-center p-5 text-secondary">
       {/* Center container */}
-      <section className="grid md:grid-cols-[60%_1fr] w-7xl p-4  mt-5 md:">
+      <section className="grid md:grid-cols-[60%_1fr] w-7xl p-4  mt-7 md:mt-0">
         {/* Hero text div */}
         <Motion.div
-          className="flex flex-col justify-center"
+          className="flex flex-col justify-center mt-5 md:mt-0"
           initial="hidden"
           animate="visible"
           variants={{
