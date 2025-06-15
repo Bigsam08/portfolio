@@ -9,14 +9,12 @@ import { motion as Motion } from "framer-motion";
 
 // Images
 const images = [
-  { src: "/images/Screenshot (10).png", title: "Banking app" },
-  { src: "/images/Screenshot (11).png", title: "school dashBoard" },
-  { src: "/images/Screenshot (5).png", title: "Demo" },
-  { src: "/images/Screenshot (9).png", title: "chat app" },
-  { src: "/works/work5.jpg", title: "movie app" },
-  { src: "/works/work6.jpg", title: "vibey" },
-  { src: "/works/work6.jpg", title: "vibey" },
-  { src: "/works/work6.jpg", title: "vibey" },
+  { src: "/images/chat-ui.png", title: "chat app" },
+  { src: "/images/hotel-ui.png", title: "Hotel Website" },
+  { src: "/images/games-ui.png", title: "Guessing Game Demo" },
+  { src: "/images/movies-ui.png", title: "Movie app" },
+  { src:  "/images/portfolio-ui.png", title: "empty" },
+
 ];
 
 const Work = () => {
@@ -90,7 +88,7 @@ const Work = () => {
           >
             {chunkedImages.map((group, i) => (
               <SwiperSlide key={i}>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-3">
                   {group.map((project, idx) => (
                     <Motion.div
                       key={idx}
@@ -106,7 +104,7 @@ const Work = () => {
                       <img
                         src={project.src}
                         alt={project.title}
-                        className="w-full h-40 sm:h-48 object-contain p-3 z-10"
+                        className="w-full h-40 sm:h-52 object-cover z-10"
                       />
 
                       {/* Gradient Overlay */}

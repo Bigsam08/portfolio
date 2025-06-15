@@ -47,7 +47,7 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.2 }}
-        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-10 items-center mt-13 md:mt-0"
       >
         {/* -----------------Left: Profile Image-------------------- */}
         <Motion.div
@@ -55,17 +55,23 @@ const About = () => {
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           viewport={{ once: false }}
-          className="relative flex justify-center items-center mt-7 md:mt-0 "
+          className="relative flex justify-center items-center p-6 mt-9 md:mt-0"
         >
-          {/* Spinning Circle */}
-          <div className="absolute rounded-full border-4 border-transparent animate-spin-slow custom-bg w-60 h-60 md:w-96 md:h-96 z-0"></div>
+          <div className="relative w-60 h-60 sm:w-80 sm:h-80 md:w-96 md:h-96">
+            {/* Spinner Frame */}
+            <div className="absolute inset-0 flex justify-center items-center z-0">
+              <div className="animate-spin-slow w-full h-full border-4 custom-bg border-transparent rounded-full"></div>
+            </div>
 
-          {/* Profile Image */}
-          <img
-            src="images/my-pic.jpg"
-            alt="Profile"
-            className="h-52 w-52 md:w-64 md:h-64 object-cover rounded-full shadow-lg shadow-cyan-500/20 border-4 border-color z-10"
-          />
+            {/* Profile Image */}
+            <div className="absolute hd:inset-10 inset-4 z-10 rounded-full overflow-hidden shadow-xl border-4 border-color">
+              <img
+                src="images/my-pic.jpg"
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </Motion.div>
 
         {/* -------------- Right: Bio ------------------- */}
@@ -74,6 +80,7 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
           viewport={{ once: false }}
+          className="py-5"
         >
           <h2 className="text-2xl md:text-4xl font-bold mb-4 mt-2 md:mt-0 text-main">
             About Me
