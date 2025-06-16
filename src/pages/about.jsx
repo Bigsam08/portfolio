@@ -47,7 +47,7 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.2 }}
-        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-10 items-center mt-13 md:mt-0"
+        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 md:gap-10 items-center mt-13 mb-7 md:mt-0 md:mb-0"
       >
         {/* -----------------Left: Profile Image-------------------- */}
         <Motion.div
