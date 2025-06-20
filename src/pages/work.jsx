@@ -9,12 +9,27 @@ import { motion as Motion } from "framer-motion";
 
 // Images
 const images = [
-  { src: "/images/chat-ui.png", title: "chat app" },
-  { src: "/images/hotel-ui.png", title: "Hotel Website" },
-  { src: "/images/games-ui.png", title: "Guessing Game Demo" },
-  { src: "/images/movies-ui.png", title: "Movie app" },
-  { src:  "/images/portfolio-ui.png", title: "empty" },
-
+  {
+    src: "/images/chat-ui.png",
+    title: "chat app",
+    link: "https://qchat-mu.vercel.app",
+  },
+  {
+    src: "/images/hotel-ui.png",
+    title: "Hotel Website",
+    link: "https://www.youtube.com/watch?v=k43DMrKgwUw&t=64s",
+  },
+  {
+    src: "/images/games-ui.png",
+    title: "Guessing Game Demo",
+    link: "https://color-game-1nl8.onrender.com",
+  },
+  {
+    src: "/images/movies-ui.png",
+    title: "Movie app",
+    link: "https://bigsam08.github.io/",
+  },
+  { src: "/images/portfolio-ui.png", title: "empty" },
 ];
 
 const Work = () => {
@@ -101,15 +116,26 @@ const Work = () => {
                       }}
                     >
                       {/* Project Image */}
-                      <img
-                        src={project.src}
-                        alt={project.title}
-                        className="w-full h-40 sm:h-52 object-cover z-10"
-                      />
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          src={project.src}
+                          alt={project.title}
+                          className="w-full h-40 sm:h-52 object-cover z-10"
+                        />
+                      </a>
 
                       {/* Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/40 to-pink-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/40 to-pink-400/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+                      </a>
                       {/* Title sliding in with framer-motion */}
                       <Motion.div
                         variants={{
