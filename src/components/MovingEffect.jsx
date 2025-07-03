@@ -41,11 +41,13 @@ const balls = [
 // Helper function to switch color based on theme
 const getFillColor = (theme, baseColor) => {
   if (theme === "cream") {
-    // Convert neon blues to warm yellows
     return baseColor === "#0ff" ? "#FB923C" : "#451A03";
   }
-  return baseColor; // Default blue/neon for dark theme
+  return baseColor;
 };
+
+// Safe fallback for numbers
+const safeNumber = (v) => (typeof v === "number" ? v : 0);
 
 const MovingEffect = () => {
   const theme = useThemeStore((state) => state.theme);
@@ -57,23 +59,27 @@ const MovingEffect = () => {
       preserveAspectRatio="none"
     >
       {balls.map((ball, index) => {
-        const startCx = ball.cx ?? 0;
-        const endCx = ball.reverse ? 0 : 100; // if reverse true, go 100->0; else 0->100
+        const startCx = safeNumber(ball.cx);
+        const cy = safeNumber(ball.cy);
+        const r = safeNumber(ball.r);
+        const duration = safeNumber(ball.duration);
+        const delay = safeNumber(ball.delay);
+
         const animateCx = ball.reverse
-          ? [startCx, endCx, startCx]
+          ? [startCx, 0, startCx]
           : [startCx, 100, startCx];
 
         return (
           <Motion.circle
-            key={index}
+            key={`${index}-${theme}`}
             cx={startCx}
-            cy={ball.cy}
-            r={ball.r}
+            cy={cy}
+            r={r}
             fill={getFillColor(theme, ball.fill)}
-            animate={{ cx: animateCx }}
+            animate={{ attr: { cx: animateCx } }}
             transition={{
-              duration: ball.duration,
-              delay: ball.delay,
+              duration,
+              delay,
               repeat: Infinity,
               ease: "linear",
             }}
