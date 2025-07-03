@@ -70,7 +70,7 @@ const home = () => {
           >
             {/* Image */}
             <img
-              src="/images/my-pic.jpg"
+              src="/images/my-pic.webp"
               alt="Bigsam"
               className="object-cover w-full h-full rounded-full relative z-10"
             />

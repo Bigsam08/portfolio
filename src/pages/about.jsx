@@ -66,7 +66,7 @@ const About = () => {
             {/* Profile Image */}
             <div className="absolute hd:inset-10 inset-4 z-10 rounded-full overflow-hidden shadow-xl border-4 border-color">
               <img
-                src="images/my-pic.jpg"
+                src="images/my-pic.webp"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />

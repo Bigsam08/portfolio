@@ -15,21 +15,21 @@ const images = [
     link: "https://qchat-mu.vercel.app",
   },
   {
-    src: "/images/hotel-ui.png",
+    src: "/images/hotel-ui.webp",
     title: "Hotel Website",
     link: "https://www.youtube.com/watch?v=k43DMrKgwUw&t=64s",
   },
   {
-    src: "/images/games-ui.png",
+    src: "/images/games-ui.webp",
     title: "Guessing Game Demo",
     link: "https://color-game-1nl8.onrender.com",
   },
   {
-    src: "/images/movies-ui.png",
+    src: "/images/movies-ui.webp",
     title: "Movie app",
     link: "https://bigsam08.github.io/",
   },
-  { src: "/images/portfolio-ui.png", title: "empty" },
+  { src: "/images/portfolio-ui.webp", title: "My portfolio" },
 ];
 
 const Work = () => {

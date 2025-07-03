@@ -5,7 +5,7 @@ import { AnimatePresence, motion as Motion } from "framer-motion";
 import notificationStore from "../store/notifyStore";
 import { useEffect } from "react";
 
-const NOTIFICATION_SOUND = "/audio/notification.wav";
+const NOTIFICATION_SOUND = "/audio/notification.mp3";
 
 const Notify = () => {
   const { notify } = notificationStore(); // import notification from the notification store
@@ -13,6 +13,7 @@ const Notify = () => {
   useEffect(() => {
     if (notify) {
       const audio = new Audio(NOTIFICATION_SOUND);
+      audio.preload = 'auto'
       audio.play().catch((e) => {
         console.warn("Failed to play sound:", e);
       });

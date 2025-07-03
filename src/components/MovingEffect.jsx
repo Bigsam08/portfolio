@@ -1,6 +1,5 @@
-import { motion as Motion } from "framer-motion"
+import { motion as Motion } from "framer-motion";
 import useThemeStore from "../store/theme.store";
-
 
 const balls = [
   {
@@ -57,24 +56,30 @@ const MovingEffect = () => {
       viewBox="0 0 100 100"
       preserveAspectRatio="none"
     >
-      {balls.map((ball, index) => (
-        <Motion.circle
-          key={index}
-          cx={ball.reverse ? 100 : 0}
-          cy={ball.cy}
-          r={ball.r}
-          fill={getFillColor(theme, ball.fill)}
-          animate={{
-            cx: ball.reverse ? [100, 0, 100] : [0, 100, 0],
-          }}
-          transition={{
-            duration: ball.duration,
-            delay: ball.delay,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-      ))}
+      {balls.map((ball, index) => {
+        const startCx = ball.cx ?? 0;
+        const endCx = ball.reverse ? 0 : 100; // if reverse true, go 100->0; else 0->100
+        const animateCx = ball.reverse
+          ? [startCx, endCx, startCx]
+          : [startCx, 100, startCx];
+
+        return (
+          <Motion.circle
+            key={index}
+            cx={startCx}
+            cy={ball.cy}
+            r={ball.r}
+            fill={getFillColor(theme, ball.fill)}
+            animate={{ cx: animateCx }}
+            transition={{
+              duration: ball.duration,
+              delay: ball.delay,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
+        );
+      })}
     </Motion.svg>
   );
 };

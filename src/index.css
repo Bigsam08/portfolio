@@ -8,10 +8,36 @@
 
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Syne';
+  src: url('/fonts/Syne-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
 * {
   font-family: "Syne", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 500;
   font-style: normal;
 }
 
